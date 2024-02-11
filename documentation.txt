@@ -1,0 +1,59 @@
+START PROJECT (be in the directory you wish to save)
+$django-admin startproject vyombo_v2
+Get inside the created project
+cd vyombo_v2
+START APP
+$python manage.py startapp vyomboapp
+
+++create 'templates' folder to hold your html templates
+-put the 'index.html' file selected
+
+++create 'static' folder to put all your static files
+
+++create a 'urls.py' file in vyomboapp to put your url directions
+
+++ define the indexview in the views.py file
+
+++add the app urls file to the urls.py project's file
+
+++in the settings file remember to indicate the templates as well as the static folder.
++++also add the vyomboapp configuration in the settings installed apps
+
+++in the index.html file remember to well call the static files
+
+DATABASE CONNECTION
+++open pgAdmin
+++open the server to be used
+++create the database 'vyombo'
+++make sure psycopg2 connector is installed
+++in the settings file make sure to fill the created database credentials
+++ create the models required  to store the data
+--banner
+--uzwazaidi
+--mpya
+++make the migration
+$python manage.py makemigrations
+$python manage.py migrate 
+
+++create the superuser(admin)
+$python manage.py createsuperuser
+--username: admin
+--email: vyombo_maisha@gmail.com
+--password: 12345
+
+++login the admin view (localhost:8000/admin) using the created superuser credentials
+++ register your models in the admin.py file so as they can be accessed by the admin
+
+++ add the urlpatterns in the urls.py project
+--add the banners to the databse via the admin login in browser
+--add most sold items via the admin login in browser
+--add the new items via the admin login in browser
+
+++import the models created in the views.py file
+--create the Banner object (bann)
+--create the Uzwazaidi object (zaidi)
+--create the BidhaaMpya object (mpya)
+**in the index.html template remember to assign proper calling of the data from the database
+
+
++=image size in zilizopendwa zaidi (zaidis) is 342x342
